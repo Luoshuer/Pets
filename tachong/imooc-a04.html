@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Vue app</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		{{msg}}
+		<div v-for='item in list'>
+			<div v-if="item.age<28" 
+			:class="['active','add',{'another':item.age<28}]"
+			:style='styleMsg'>
+				{{item.name}}
+			</div>
+			<div v-else>
+				{{item.age}}
+			</div>
+		</div>
+	</div>
+
+	<script>
+	  
+    var app = new Vue({
+		el: '#app',	
+		data: {
+			msg: 'Hello Vue',
+			styleMsg:{
+				color: 'red',
+				'font-size': '22px',
+			},
+			list:[{
+				name:'santaner',
+				age:27
+			},{
+				name:'miata',
+				age:29
+			}]
+		}
+
+    })
+
+	</script>
+</body>
+</html>

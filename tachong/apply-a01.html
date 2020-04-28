@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Vue app</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<app-nav>导航</app-nav>
+		<app-view>
+			<app-sidebar>侧边栏</app-sidebar>
+			<app-content>主体内容</app-content>
+		</app-view>
+	</div>
+	  
+	<script>
+	  
+    var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'Hello Vue!'
+		}
+    })
+	
+	
+	Vue.component('todo-item',{
+		template:'<li>这是一个待办事项</li>'
+	})
+	new Vue({el:'#app-4'})
+	
+	</script>
+</body>
+</html>

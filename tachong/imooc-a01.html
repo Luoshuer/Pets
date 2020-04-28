@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Vue app</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-bind:id='bg1'>
+			{{title}}
+		</div>
+		<div>
+			{{ message }}
+		</div>
+		<div v-html='template'>
+		</div>
+		{{count}}
+		<br>
+		<!-- <button type='button' v-on:click='submit()'>加数字</button> -->
+		<button type='button' @click='submit()'>加数字</button>
+	</div>
+
+
+	<script>
+	  
+    var app = new Vue({
+		el: '#app',
+		data: {
+			bg1:'title',
+			title:'Hello title',
+			message: 'Hello Vue!',
+			count:0,
+			template:'<div>Hello template</div>'
+		},
+		methods:{
+			submit:function(){
+				this.count++
+			}
+		}
+    })
+
+	</script>
+</body>
+</html>
